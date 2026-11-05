@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Style | Clothing Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* Navigation */
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #f4b400;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #f4b400;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 400px;
+            background: linear-gradient(
+                rgba(0,0,0,0.5),
+                rgba(0,0,0,0.5)
+            ), url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600")
+            center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            padding: 12px 30px;
+            background: #f4b400;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Products */
+        .products {
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            margin: 15px 0 8px;
+        }
+
+        .price {
+            color: #d49a00;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product button {
+            background: #111;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .product button:hover {
+            background: #f4b400;
+            color: black;
+        }
+
+        /* About */
+        .about {
+            background: #222;
+            color: white;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <h1>URBAN STYLE</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h2>Upgrade Your Style</h2>
+            <p>Discover the latest fashion trends at affordable prices.</p>
+            <button onclick="location.href='#products'">
+                Shop Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+
+        <h2>Our Collection</h2>
+
+        <div class="product-container">
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="White T-shirt">
+                <h3>Classic White T-Shirt</h3>
+                <p class="price">₹599</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500" alt="Fashion outfit">
+                <h3>Women's Fashion Outfit</h3>
+                <p class="price">₹1,299</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" alt="Jeans">
+                <h3>Denim Jeans</h3>
+                <p class="price">₹1,499</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500" alt="Jacket">
+                <h3>Premium Jacket</h3>
+                <p class="price">₹1,999</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Urban Style</h2>
+        <p>
+            We bring you stylish, comfortable and affordable clothing.
+            Explore our collection and express your personality through fashion.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2026 Urban Style. All Rights Reserved.</p>
+        <p>Email: support@urbanstyle.com</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+
+            document.getElementById("cart-count").innerText = cartCount;
+
+            alert("Product added to cart successfully!");
+        }
+    </script>
+
+</body>
+</html>
